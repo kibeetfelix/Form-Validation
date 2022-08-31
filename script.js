@@ -38,6 +38,7 @@ function validatePhone() {
     phoneError.innerHTML = '<i class="fas fa-check-circle"></i>';
     return true;
 }
+
 function validateEmail() {
     var email = document.getElementById('contact-email').value;
 
@@ -54,3 +55,16 @@ function validateEmail() {
     return true;
 }
 
+function validateMessage() {
+    var message = document.getElementById('contact-message').value;
+    var required = 30;
+    var left = required - message.length;
+
+    if (left > 0) {
+        messageError.innerHTML = left + 'More characters is required';
+        return false;
+    }
+
+    messageError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
